@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital@1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="sec-web.css">
+
+<style>
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: 'Montserrat', sans-serif;
+        scroll-behavior: smooth;  
+      }
+    .sec{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 100px 0;
+   
+    
+  }
+  .sec a{
+      width: 200px;
+      background-color: rgb(184, 92, 92);
+      height: 50px;
+    margin: 30px 200px;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 20px;
+
+  }
+  .sec a:visited{
+   color: black;
+  }
+  .sec a:link{
+    text-decoration: none;
+    color: black;
+  }
+
+  .sec  a:hover , a:active {
+    color: rgb(231, 206, 206);
+    transition: 0.5s;
+    cursor: pointer;
+  }
+
+  .x{
+      width: 50px;
+      height: 50px;
+      position: fixed;
+      top: 50px;
+      right: 100px;
+      cursor: pointer;
+  }
+  .x .feather-x-circle{
+      width: 50px;
+      height: 50px;
+  }
+  .x:visited{
+      color: black;
+  }
+</style>
+
+
+
+</head>
+<body>
+    <div class=" sec">
+        <a href="sec-web.html">Home</a> 
+
+        <a href="sec-web.html#about">About</a>
+        <a href="sec-web.html#hire">Hire us</a>
+        <a href="sec-web.html#folio">Folio</a>
+        <a href="sec-web.html#template">Templates</a>
+        <a href="sec-web.html#contact">contact</a>
+    </div>
+    <a class="x" href="sec-web.html">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+    </a>
+</body>
+</html>

@@ -1,0 +1,45 @@
+:root{
+    --light-green:#C2E79A;
+    --dark-green: #284D00;
+
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+  
+}
+*::-webkit-scrollbar{
+    display: none;
+}
+.mother{
+    width: 100%;
+    height: 6000px;
+
+}
+.home-intro{
+    width: 100%;
+    height: 600px;
+    background-image: url(img/black-leather-armchair-lamp-living-room-interior-with-plant-concrete-wall-3d-rendering.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 0;
+}
+.home-intro img{
+    width: 100%;
+    height: 600px;
+    background-size: 100%;
+}
+.home-brand{
+    width: 400px;
+    height: 200px;
+    background-color: #00000090;
+    position: absolute;
+    
+    color: white;
+    
+    
+}

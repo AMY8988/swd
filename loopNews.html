@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Cards</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        .news{
+                width: 90%;
+                margin: 50px auto;
+                columns: 3 250px;
+                
+              
+        }
+        .card{
+               width: 100%;
+               margin-bottom: 10px;
+               box-shadow: 0 0 15px #919090;
+               border-radius: 5px;
+        }
+        .card-img{
+                width: 100%;
+                border-radius: 5px;
+                
+        }
+        span{
+            font-weight: bold;
+        }
+
+        h4,small,p,a {
+                padding: 10px;
+
+        }
+        .title{
+
+        }
+        .author{
+
+        }
+        .description{
+            font-size: 15px;
+        }
+        .read-more{
+            color: black;
+            text-decoration: none;
+        }
+        .read-more:hover{
+            color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div class="news">
+        
+    </div>
+
+    <script src="loopNewsAPI.js"></script>
+    <script>
+       let articles = data.articles;
+       console.log(articles[0]);
+
+       let news = document.querySelector(".news");
+       articles.map(function(el,index){
+                // console.log(el.title);
+                news.innerHTML += `
+                <div class="card">
+                    <img src="${el.urlToImage}" alt="" class="card-img">
+                    <h4 class="title">${el.title}</h4>
+                    <small class="author"><span>Author -</span>${el.author}</small>
+                    <p class="description">${el.description}</p>
+                    <a href="${el.url}" class="read-more">Read More..</a>
+                </div>
+                
+                `;
+       });
+
+    </script>
+</body>
+</html>

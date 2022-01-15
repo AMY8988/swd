@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try-Catch-finally-throw</title>
+</head>
+<body>
+    
+    <script>
+        let info ={
+            name: "AMY MOE" ,
+            age: null ,
+            job: "Programmer",
+        }
+        // try ka error check pay tr
+        try{
+            console.log("No Error Test");
+
+            if(info.job){
+                console.log(info.job);
+            }else{
+                console.log("there is no job")
+            };
+
+            if(info.age){
+                console.log(info.age);
+            }  // throw ka error ma tat tr ko error phit ag yay tr
+            else{
+                throw new SyntaxError("no age");
+            };
+            // error tat twr tae line ka sa pee out ka line tway a kone lone alote ma lote bu
+            aa();
+            // catch ka err shi ny yin pya pay tr
+        }catch(err){
+            console.error(err.message);
+        }finally{
+            console.log("This is final resulf ")
+        }// finally ka try yaw catch yaw pee yin htr loh ya tae message 
+
+    </script>
+</body>
+</html>

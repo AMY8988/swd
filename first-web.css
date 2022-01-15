@@ -1,0 +1,152 @@
+
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+   
+}
+
+.nav{
+ width: 100% ;
+ height: 100px;
+ background-color: antiquewhite;
+ display: flex;
+
+}
+.title{
+    width: 20%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navs{
+    display: flex;
+    width: 55%;
+    align-items: center;
+    justify-content: center;
+}
+span{
+    padding-right: 20px;
+    cursor: pointer;
+}
+span:hover{
+    color: white;
+}
+.in-up{
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+.sign.in{
+   margin-right: 10px;
+}
+.sign{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  border: none;
+  width: 100px;
+  height: 50px;
+  border-radius: 20px;
+}
+.sign:hover{
+    color: antiquewhite;
+    background-color: #000000;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.mom-container{
+ display: flex;
+ height: 500px;
+}
+
+.food.intro{
+    width: 50%;
+    display: inline-block;
+    padding: 100px 50px;
+}
+.food.intro h1{
+    margin-bottom: 20px;
+}
+.food.intro p{
+    margin-bottom: 20px;
+}
+.food.intro button{
+    width: 110px;
+    height: 50px;
+    border-radius: 15px;
+    border: none;
+    background-color: antiquewhite;
+    color: #000000;
+    margin-right:30px;
+   
+}
+.food.intro button:hover{
+    box-shadow: 0 0 3px #f1f1f122;
+    transition: 0.5s;
+}
+.food.img{
+    width: 50%;
+    border-radius: 50%;
+}
+.choose{
+    display: flex;
+    width: 100%;
+}
+
+img{
+    width: 100%;
+}
+.vd{
+    display: flex;
+}
+.vd:hover{
+    color: #00000050;
+}
+.vd div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.vd img{
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+.mom-footer{
+    width: 100%;
+    height: 650px;
+   display: flex;
+   background-color: #F6F6F6;
+   padding: 100px;
+
+}
+.footer.intro{
+    width: 50%;
+    display: inline-block;
+    padding: 30px 50px;
+}
+.footer.intro h1{
+    margin-bottom: 20px;
+}
+
+
+.footer.img{
+    width: 50%;
+   
+}
+
+.footer.img img{
+    background-image: url(img/web.jpg);
+    background-size: 300px;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+.footer.intro p{
+    margin-bottom: -20px;
+   
+}

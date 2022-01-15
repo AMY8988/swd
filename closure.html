@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>call back and closure</title>
+</head>
+<body>
+
+    <script>
+        function aa(){
+            function aaa(){
+                console.log("this is closure function")
+            };
+
+            aaa();
+        }
+
+            //closure function so tr function htal ka function pl
+
+        function b(x,y){
+
+                let result = x*y;
+
+                function bb(z){
+                    console.log("this is final result ="+z);
+
+                }
+                 //function htal hmr function pyan yay yin out hmr aphay pyan htote pay ya ml
+                //just like this
+                bb(result);
+        };
+
+
+        //this is callback funtion 
+        //funk so tr ka callback funtion name
+        function d(x,y,funk){
+            let z = x+y;
+            funk(z);
+        };
+
+        // d function hh ka a paw ka function d htl ka function funk ko a lote pay htr tr
+        function hh(x){
+            console.log("This is callback function " + x);
+        };
+        //function d ko return pyan pay htr tr
+        d(9,5,hh);
+    </script>
+</body>
+</html>

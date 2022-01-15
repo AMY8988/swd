@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <H1>
+        Event Delegation
+
+    </H1>
+    <button onclick="showlist()">Show list</button>
+    <ul id="output"></ul>
+
+    
+
+    <script>
+        let arr = ["apple" , "orange" , "stawberry" ,"banana" , "lemon"] ;
+        let output = document.getElementById("output");
+        let addlist = function (x){
+            let li =document.createElement("li");
+            let content =document.createTextNode(x);
+            li.appendChild(content);
+            output.appendChild(li);
+
+        }
+
+       function showlist(){
+        arr.map(function (el){
+            addlist(el);
+        });
+
+       };
+
+       //delagation lote tae nee
+       output.addEventListener("click" , function (e){
+             let value = e.target;
+           console.log(value.innerHTML);
+       })
+
+       //Dr ka normal way
+      //  let li = document.querySelectorAll("li");
+    //    li.forEach(function(el){
+    //        el.addEventListener("click" ,function(){
+     //           console.log(el.innerHTML);
+    //        });
+    //    });
+
+       
+    </script>
+</body>
+</html>
