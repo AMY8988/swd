@@ -18,6 +18,7 @@
 }
 body{
     width: 100%;
+    
    
 }
 
@@ -74,14 +75,14 @@ body{
     width: 100%;
     height: 650px;
     background-image: url(img/down.jpg);
-    background-size: 100%;
+    background-size: cover;
     position: relative;
 }
 .intro{
     width: 400px;
     position: absolute;
     top: 120px;
-    right: 294px;
+    right: 25px;
     font-size: 25px;
     color: black;
     text-align: center;
@@ -142,7 +143,7 @@ body{
 .about{
    
     width: 100%;
-    height: 1600px;
+    height: 2600px;
    
 
 }
@@ -193,6 +194,8 @@ body{
     line-height: 30px;
 }
 .hire-us{
+    width: 100%;
+    height: 2000px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -206,10 +209,11 @@ body{
 }
 .hire-list{
     display: flex;
-    width: 900px;
-    height: 1000px;
+    width:100%;
+    height:1500px;
     flex-wrap: wrap;
     justify-content: space-around;
+    margin-bottom: 10px;
 }
 .hire-us img{
     width: 400px;
@@ -217,6 +221,9 @@ body{
     border: none;
     border-radius: 5px;
     box-shadow: 4px 4px 15px;
+}
+.hire-items{
+    height: 500px;
 }
 .hire-items p{
    text-align: center;
@@ -375,16 +382,16 @@ body{
 
 .template-body{
     width: 100%;
-    height: 550px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     color: var(--dark-brave);
-    margin-left: 100px;
+    /* padding-left: 50px; */
 }
 .template-body header{
     font-family: 'Old Standard TT', serif;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
     margin-bottom: 30px;
 }
@@ -392,6 +399,9 @@ body{
     display: flex;
 }
 
+.template-body-lil .para{
+    font-size: 13px;
+}
 .template-body-lil .svg{
     display: flex;
     flex-direction: column;
@@ -623,7 +633,7 @@ body{
 
     .main-nav .sec{
        width: 0%;
-       visibility: hidden;
+      display: none;
     }
     .burger{
         
@@ -736,7 +746,7 @@ body{
         align-items: center;
         justify-content: center;
         width: 400px;
-        margin-left: 10px;
+        
 
     }
     .template-body-lil .para p {

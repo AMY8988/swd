@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        #preview{
+            width: 500px;
+            
+        }
+        #upload{
+            display: none;
+        }
+        #uploader{
+            
+            width: 50px;
+            height: 50px;
+            margin: auto;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        #uploader:hover{
+            box-shadow: 0 0 10px #b1b0b0;
+        }
+        #addImage{
+            width: 50px;
+           
+        }
+        #gallary{
+            width: 900px;
+            columns: 3 250px;
+            margin: 10px auto;
+        }
+        .img{
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgb(180, 180, 180);
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="uploader">
+        <img src="img/add-image.png" id="addImage" alt="">
+    </div>
+    
+    <input type="file" id="upload" accept="image/jpg,image/png" multiple>
+    <br>
+    
+    <div id="gallary"></div>
+
+    <script>
+        let upload = document.getElementById("upload");
+        let gallary = document.getElementById("gallary");
+        
+        let addImage = document.getElementById("addImage");
+
+        addImage.addEventListener("click",function(){
+                    upload.click();
+        });
+
+
+        function addToGallary(src){
+            let img = new Image();
+            img.className = "img";
+            img.src = src;
+            gallary.appendChild(img);
+        }
+
+        
+
+        upload.addEventListener("change",function(){
+
+            let photo = upload.files ;
+            
+            for(let i=0 ; i<photo.length ; i++){
+
+                let reader = new FileReader();
+                reader.addEventListener("load", function(){
+                   addToGallary(reader.result);
+                });
+
+                reader.readAsDataURL(photo[i]);
+                console.log (photo[i])
+
+            }
+
+           
+
+        });
+         
+
+    </script>
+</body>
+</html>

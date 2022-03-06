@@ -9,7 +9,7 @@
 <body>
      <input type="text" id="input">
 
-     <button id="btn">Add List</button>
+     <button id="btn" onclick="clickBtn()">Add List</button>
 
      <ul id="List">
 
@@ -17,6 +17,61 @@
 
 
      <script>
+          let input = document.getElementById("input");
+          let list = document.getElementById("List");
+          
+
+          function addTolist(x){
+                    let li = document.createElement("li");
+                    let content = document.createTextNode(x);
+                    li.appendChild(content);
+                    list.appendChild(li);
+          };
+
+        let k = Object.keys(localStorage);
+           k.sort();
+          let id = 1;
+
+          function save(x){
+                    localStorage.setItem(id,x);
+                    id++ ;
+          }
+
+
+          function showlist(){
+                 
+                  console.log(k);
+                  k.map(function(el,index){
+                       addTolist(localStorage.getItem(el));
+                  })
+                    
+              
+          };
+
+          showlist();
+          function clickBtn(){
+                    let x = input.value;
+                    let li = document.createElement("li");
+                    let content = document.createTextNode(x);
+                    li.appendChild(content);
+                    list.appendChild(li);
+                    input.value = "";
+          }
+
+          document.addEventListener("keyup",function(e){
+
+                    if(e.keyCode == 13){
+                         let note = input.value;
+                         addTolist(note);
+                         input.value = "";
+                         save(note);
+                    }
+          });
+
+
+     </script>
+
+     <!-- <script>
          let input = document.getElementById("input");
          let list = document.getElementById("List");
          let btn = document.getElementById("btn");
@@ -110,7 +165,7 @@
         
         
  
-     </script>
+     </script> -->
 
 </body>
 </html>

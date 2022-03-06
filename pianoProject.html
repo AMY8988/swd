@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piano</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(207, 205, 201);
+
+        }
+        .piano{
+            width: 550px;
+            margin: auto;
+            align-items: center;
+            padding: 20px;
+        }
+
+        #ul{
+            display: inline-block;
+            width: 500px;
+            padding: 20px;
+            /* margin-top: 20px; */
+
+        }
+        li #text{
+            width: 100%;
+        }
+        button{
+            border: none;
+            border-radius: 10px;
+            
+        }
+        input{
+            border: none;
+            border-radius: 10px;
+            background-color: rgb(236, 233, 233);
+            width: 300px;
+            height: 30px;
+            padding: 10px;
+        }
+        .saveBtn{
+            width: 80px;
+            height: 30px;
+            background-color: black;
+            color: white;
+           
+            
+        }
+        .replayBtn{
+            width: 60px;
+            height: 20px;
+            margin-left: 50px;
+            border-radius: 5px;
+            background-color:black;
+            color: white;
+        }
+        .pianoBtn button{
+            width: 50px;
+            height: 100px;
+            background-color: white;
+            border: none;
+
+        }
+        
+        .active{
+          box-shadow: 0 0 10px #141414fa;
+        }
+        
+    </style>
+</head>
+<body>
+
+  <div class="piano">
+   
+   
+   <div class="pianoBtn">
+    <button class="whiteNotes" data-note="a" onclick="play('C4')">C4</button>
+    <button class="whiteNotes" data-note="s" onclick="play('D4')">D4</button>
+    <button class="whiteNotes" data-note="d" onclick="play('E4')">E4</button>
+    <button class="whiteNotes" data-note="f" onclick="play('F4')">F4</button>
+    <button class="whiteNotes" data-note="j" onclick="play('G4')">G4</button>
+    <button class="whiteNotes" data-note="k" onclick="play('A4')">A4</button>
+    <button class="whiteNotes" data-note="l" onclick="play('B4')">B4</button>
+    <button class="whiteNotes" data-note=";" onclick="play('C5')">C5</button>
+  
+    </div>   
+    <br>
+    <br>
+   <input type="text" id="save" placeholder="Here's your notes">
+   <button class="saveBtn" onclick="saveCords()">Save</button>
+  
+
+    <ul id="ul"></ul>
+  </div>
+    
+
+ <script>
+
+        let input = document.getElementById("save");
+        
+      
+        
+       
+       
+        
+
+        function play(x){
+
+       
+            let a = new Audio(`pianoSound/${x}.mp3`);
+             a.play();
+            input.value += x + ",";
+             console.log(`You play ${x} key`)
+
+         
+        };
+
+
+        
+
+       
+
+        
+        let cordMemory = [];
+        let ul = document.getElementById("ul");
+
+       
+
+       
+        function saveCords(){
+
+               if (input.value != ""){
+
+                    console.log(`${input.value} is saved in Cord Memory`)
+
+                    let cord = input.value;
+                    cordMemory.push(cord);
+
+                    let li = document.createElement("li");
+                    let content = document.createTextNode(cord);
+                    let btn = document.createElement("button");
+                    let btnName = document.createTextNode("replay");
+                    btn.className = "replayBtn";
+
+                    // console.log(`${btn.id}`);
+
+                    cordMemory.map(function(el,index){
+                        li.appendChild(content);
+                        ul.appendChild(li);
+                        btn.appendChild(btnName);
+                        li.appendChild(btn);
+                        btn.setAttribute("onclick", `replay(${index})` );
+                        input.value = "";
+                    });
+                
+                }else{
+
+                     alert("Nothing to Save Nodes")
+
+                    }
+                
+        };
+
+
+
+                function replay(x){
+                let current = cordMemory[x].split(",");
+                current.pop();
+                replayMemory(current);
+                };
+
+
+                let Keys = document.querySelectorAll(".whiteNotes");
+                
+                        let i = 0;
+                        Keys.forEach(function(key){
+                            
+                            let keyNote = Keys[i].dataset.note;
+                            let x = Keys[i].innerText;
+                            let shaldow =document.querySelectorAll(".whiteNotes")[i];
+                         document.addEventListener("keyup", function (e){
+
+                              let current = e.key;
+                              if(current == keyNote){
+                                   play(x);
+
+                            // }else if(current == keyNote){
+                            //    play("D4");
+                            // }else if(current == keyNote){
+                            //    play("E4");
+                            // }else if(current == keyNote){
+                            //    play("F4");
+                            // }else if(current == keyNote){
+                            //    play("G4");
+                            // }else if(current == keyNote){
+                            //    play("A4");
+                            // }else if(current == keyNote){
+                            //    play("B4");
+                            // }else if(current == keyNote){
+                            //    play("C5");
+                              }
+                        
+                             });
+
+                            
+                            document.addEventListener("keypress", function(e){
+                                        if(e.key == keyNote){
+
+                                         shaldow.classList.add("active");
+                                            
+                                        }
+                            });
+                             
+
+                            document.addEventListener("keyup", function(e){
+                                        if(e.key == keyNote){
+
+                                         shaldow.classList.remove("active");
+                                            
+                                        }
+                            });
+                           
+                            i++
+                        });
+               
+
+
+               
+
+
+               
+
+
+                function replayMemory(array,delay=700){
+   
+
+                    let x = delay;
+                    array.map(function(el,index){
+                        setTimeout(play,x,el);
+                        x += delay;
+                    });
+                
+            
+                 };
+
+
+            
+
+                 
+                    
+                       
+                          
+                          
+                        
+
+              
+                    
+                
+
+                 
+
+</script>
+   
+</body>
+
+</html>
