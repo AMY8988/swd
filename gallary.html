@@ -65,6 +65,7 @@
 
         addImage.addEventListener("click",function(){
                     upload.click();
+                    //addImage ကိုနှိပ်ရင် upload ကို click ခိုင်းလိုက်တယ်ဆိုတဲ့သဘောပဲ
         });
 
 
@@ -80,6 +81,7 @@
         upload.addEventListener("change",function(){
 
             let photo = upload.files ;
+            //input က file type မို့လို့ .files ကိုလှမ်းခေါ်လိူ့ရတာ
             
             for(let i=0 ; i<photo.length ; i++){
 
